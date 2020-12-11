@@ -1,5 +1,10 @@
-﻿@import "../bootstrap/bootstrap-social.scss";
+﻿@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Permanent+Marker&family=Tajawal:wght@400;500&display=swap');
+
+@import "../bootstrap/bootstrap-social.scss";
 @import "~bootstrap/scss/_variables.scss";
+@import "../bootstrap/variables.scss";
+
+@import "components/_navs.scss";
 
 html {
     position: relative;

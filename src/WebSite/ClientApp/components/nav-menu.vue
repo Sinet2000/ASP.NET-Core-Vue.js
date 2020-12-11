@@ -1,7 +1,6 @@
 ﻿<template>
     <div class="navbar navbar-expand-md navbar-dark">
         <div class="container">
-            <router-link to="/" class="navbar-brand" exact @click.native="toggleCollapsedOnClick">App</router-link>
             <button type="button" class="navbar-toggler" @click="toggleCollapsed">
                 <span class="navbar-toggler-icon"></span>
             </button>

@@ -24,6 +24,8 @@ namespace BusinessLogic.Models
 
         public ICollection<UserOrder> Orders { get; set; } = new List<UserOrder>();
 
+        public ICollection<Address> Addresses { get; set; } = new List<Address>();
+
         /// <summary>
         /// Navigation property for the roles this user belongs to.
         /// </summary>

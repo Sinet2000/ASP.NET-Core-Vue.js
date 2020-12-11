@@ -8,11 +8,12 @@ $border-radius-lg: .2rem;
 $border-radius-sm: .15rem;
 
 // Navbar
-$navbar-default-bg: #1E88E5;
+$navbar-default-bg: #5CDB95;
 $navbar-dark-color: #fff;
 $navbar-dark-hover-color: lighten($navbar-default-bg, 45%);
 $navbar-dark-active-color: #fff;
-
+$dropdown-link-hover-color: #EDF5E1;
+$navbar-link-color: #05386b;
 // Modals
 $modal-backdrop-bg: #fff;
 
@@ -24,3 +25,10 @@ $pagination-padding-x: .625rem;
 // For each of Bootstrap's buttons, define text, background and border color.
 $btn-secondary-bg: #fff;
 $btn-secondary-border: #ccc;
+
+$font-weight-light: 100;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;

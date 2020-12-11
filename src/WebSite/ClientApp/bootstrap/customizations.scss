@@ -2,11 +2,6 @@
     @extend .alert, .alert-danger;
 }
 
-.navbar {
-    background-color: $navbar-default-bg;
-    margin-bottom: $font-size-base * $line-height-base;
-}
-
 .card-title {
     font-size: $h3-font-size;
 }
@@ -18,67 +13,6 @@
 .btn {
     &.btn-secondary {
         @include button-variant($btn-secondary-bg, $btn-secondary-border); //Override btn-secondary colors with bootstrap 3 btn-default colors
-    }
-}
-
-.navbar .navbar-nav .dropdown {
-    display: block;
-
-    > .dropdown-toggle {
-        color: #fff;
-        padding: 0 8px;
-        border: none;
-
-        .nav-link {
-            display: inline-block;
-            padding-right: 0;
-
-            :active,
-            :focus {
-                text-decoration: none;
-            }
-        }
-    }
-
-    .dropdown-menu {
-        .dropdown-item {
-            &.active,
-            &:active {
-                background: #fff;
-                color: $dropdown-link-color;
-
-                @include hover-focus {
-                    color: $dropdown-link-hover-color;
-                    text-decoration: none;
-                    @include gradient-bg($dropdown-link-hover-bg);
-                }
-            }
-
-            &:focus {
-                outline: none;
-            }
-        }
-    }
-
-    @include media-breakpoint-up(sm) {
-        > .dropdown-toggle > .nav-link {
-            padding-right: 0;
-        }
-
-        > .dropdown-menu {
-            right: auto;
-        }
-    }
-
-    @include media-breakpoint-down(sm) {
-        .dropdown-toggle {
-            padding: 0;
-        }
-
-        .dropdown-menu {
-            position: static !important;
-            transform: none !important;
-        }
     }
 }
 

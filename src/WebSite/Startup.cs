@@ -247,6 +247,7 @@ namespace WebSite
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserOrderService, UserOrderService>();
+            services.AddScoped<IAddressService, AddressService>();
 
             //Helpers
             services.AddScoped<ISiteUrlHelper, SiteUrlHelper>();

@@ -18,6 +18,10 @@ namespace BusinessLogic.Models
 
         public DbSet<UserOrder> UserOrders { get; set; } = null!;
 
+        public DbSet<Address> Addresses { get; set; } = null!;
+
+        public DbSet<Country> Countries { get; set; } = null!;
+
         public DataContext(DbContextOptions options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -53,6 +57,11 @@ namespace BusinessLogic.Models
         DbSet<Company> Companies { get; set; }
 
         DbSet<UserOrder> UserOrders { get; set; }
+
+        DbSet<Address> Addresses { get; set; }
+
+        DbSet<Country> Countries { get; set; }
+
 
         DbSet<User> Users { get; set; }
 

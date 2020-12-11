@@ -7,6 +7,8 @@ namespace WebSite.ViewModels.Profile
         public ProfileMappingProfile()
         {
             CreateMap<User, ChangeBaseInfoViewModel>();
+
+            CreateMap<Address, AddressViewModel>();
         }
     }
 }

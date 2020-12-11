@@ -1,0 +1,79 @@
+﻿@import "~bootstrap/scss/_variables.scss";
+
+.navbar {
+    background-color: $navbar-default-bg;
+    margin-bottom: $font-size-base * $line-height-base;
+
+    .navbar-nav {
+        .nav-link {
+            font-weight: $font-weight-semibold;
+            font-family: $nav-bar-link-font-family;
+            color: $navbar-link-color;
+        }
+    }
+}
+
+.navbar .navbar-nav .dropdown {
+    display: block;
+
+    > .dropdown-toggle {
+        color: #fff;
+        padding: 0 8px;
+        border: none;
+
+        .nav-link {
+            display: inline-block;
+            padding-right: 0;
+
+            :active,
+            :focus {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        .dropdown-item {
+            &.active,
+            &:active {
+                background: #fff;
+                color: $dropdown-link-color;
+
+                @include hover-focus {
+                    color: #8EE4AF;
+                    text-decoration: none;
+                    @include gradient-bg($dropdown-link-hover-bg);
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &:hover {
+                color: #8EE4AF;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        > .dropdown-toggle > .nav-link {
+            padding-right: 0;
+        }
+
+        > .dropdown-menu {
+            right: auto;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .dropdown-toggle {
+            padding: 0;
+        }
+
+        .dropdown-menu {
+            position: static !important;
+            transform: none !important;
+        }
+    }
+}
