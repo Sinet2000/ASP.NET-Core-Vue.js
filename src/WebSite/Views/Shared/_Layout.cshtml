@@ -1,0 +1,21 @@
+@{
+    Layout = "_BaseLayout";
+}
+
+@section styles{
+    @RenderSection("styles", required: false)
+}
+
+@section scripts{
+    @RenderSection("scripts", required: false)
+}
+
+@RenderBody()
+
+@section footer{
+    <footer class="page-footer">
+        <div class="container">
+            <p class="text-muted">&copy; @DateTime.Now.Year Entrypoint</p>
+        </div>
+    </footer>
+}

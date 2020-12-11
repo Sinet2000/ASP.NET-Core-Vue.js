@@ -1,0 +1,158 @@
+﻿.validation-summary-errors {
+    @extend .alert, .alert-danger;
+}
+
+.navbar {
+    background-color: $navbar-default-bg;
+    margin-bottom: $font-size-base * $line-height-base;
+}
+
+.card-title {
+    font-size: $h3-font-size;
+}
+
+.table th {
+    border-top: 0 !important;
+}
+
+.btn {
+    &.btn-secondary {
+        @include button-variant($btn-secondary-bg, $btn-secondary-border); //Override btn-secondary colors with bootstrap 3 btn-default colors
+    }
+}
+
+.navbar .navbar-nav .dropdown {
+    display: block;
+
+    > .dropdown-toggle {
+        color: #fff;
+        padding: 0 8px;
+        border: none;
+
+        .nav-link {
+            display: inline-block;
+            padding-right: 0;
+
+            :active,
+            :focus {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        .dropdown-item {
+            &.active,
+            &:active {
+                background: #fff;
+                color: $dropdown-link-color;
+
+                @include hover-focus {
+                    color: $dropdown-link-hover-color;
+                    text-decoration: none;
+                    @include gradient-bg($dropdown-link-hover-bg);
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        > .dropdown-toggle > .nav-link {
+            padding-right: 0;
+        }
+
+        > .dropdown-menu {
+            right: auto;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .dropdown-toggle {
+            padding: 0;
+        }
+
+        .dropdown-menu {
+            position: static !important;
+            transform: none !important;
+        }
+    }
+}
+
+//Copying form inputs' validation styles to .form-group level
+//The styles are copied from Bootstrap's v4-dev branch!!!
+//TODO: NEEDS TO BE REVIEWED after Bootstrap's newest version comes out (> Beta 2).
+@mixin form-group-validation-state($state, $color) {
+    //new variable from the v4-dev branch
+    $input-focus-width: $input-btn-focus-width;
+    $bootstrap-class-name: is-#{$state};
+
+    .form-group {
+        &.#{$bootstrap-class-name} {
+
+            .form-control,
+            .custom-select {
+                @extend .form-control.#{$bootstrap-class-name};
+
+                &:focus {
+                    @extend .form-control.#{$bootstrap-class-name}:focus;
+                }
+
+                ~ .#{$state}-feedback,
+                ~ .#{$state}-tooltip {
+                    display: block;
+                }
+            }
+
+            .form-check-input {
+                @extend .form-check-input.#{$bootstrap-class-name};
+
+                + .form-check-label {
+                    color: $color;
+                }
+            }
+
+            .custom-control-input {
+                @extend .custom-control-input.#{$bootstrap-class-name};
+
+                ~ .custom-control-indicator {
+                    background-color: rgba($color, .25);
+                }
+
+                ~ .custom-control-description {
+                    color: $color;
+                }
+
+                &:focus {
+                    ~ .custom-control-indicator {
+                        box-shadow: 0 0 0 1px $body-bg, 0 0 0 $input-focus-width rgba($color, .25);
+                    }
+                }
+            }
+
+            .custom-file-input {
+                @extend .custom-file-input.#{$bootstrap-class-name};
+
+                ~ .custom-file-control {
+                    border-color: $color;
+
+                    &::before {
+                        border-color: inherit;
+                    }
+                }
+
+                &:focus {
+                    ~ .custom-file-control {
+                        box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include form-group-validation-state('valid', $form-feedback-valid-color);
+@include form-group-validation-state('invalid', $form-feedback-invalid-color);

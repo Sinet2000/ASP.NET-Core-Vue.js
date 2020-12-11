@@ -1,0 +1,23 @@
+{
+  "env": {
+    "commonjs": true,
+    "browser": true,
+    "jquery": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-console": "off",
+    "no-unused-vars": [
+      "error",
+      { "args": "none" }
+    ],
+    "semi": [ "off", "always" ],
+    "eqeqeq": [ "error", "smart" ]
+  }
+}
